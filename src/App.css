@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+.gallery {
+  display        : flex;
+  flex-wrap      : wrap;
+  align-items    : stretch;
+  justify-content: space-around;
+  flex-direction : column;
+  max-height     : 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gallery img {
+  margin    : 1em;
+  border    : 0.2em solid #332D2A;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 255, 0.3);
+  max-width : 15vw;
+  transform: scale(1);
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gallery img:hover{
+  transform: scale(1.1);}
+
+.popUpModal{
+  width: 100%;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.popUpModal .modal_Image_Section {
+  padding-right: 20px;
+
+}
+.popUpModal .modal_Image_Section img {
+  max-width: 50vw;
+  max-height: 80vh;
+}
+
+.popUpModal .modal_Content_Section{
+  padding-left: 20px;
+  width: 40vw;
+}
+
+.popUpModal .modal_Content_Section .author_Container{
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.popUpModal .modal_Content_Section button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 12;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.popUpModal .modal_Content_Section button:hover {
+  box-shadow: 1px 1px 5px 5px #ebebeb;
 }
 
-.App-link {
-  color: #61dafb;
+.popUpModal .modal_Content_Section .author_Container .author_Image{
+  flex: 0.4;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popUpModal .modal_Content_Section .author_Container .author_Data{
+  flex: 0.6;
+  border-top: 1px dashed black;
+  width: 100%;
+}
+.popUpModal .modal_Content_Section .author_Container .author_Data .author_Data_Layer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.popUpModal .modal_Content_Section .author_Container .author_Data label{
+  font-size: 1.2rem;
+  min-width: 120px;
+}
+.popUpModal .modal_Content_Section .author_Container .author_Data h5{
+  margin: 0;
+  font-size: 1.3rem;
+  margin-left: 20px;
 }
